@@ -18,6 +18,37 @@
         }
       </style>
     </noscript>
+        <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Define your start date (when your professional career began)
+        const startDate = new Date(2022, 8); // September 2022 (month index starts from 0)
+        const today = new Date();
+
+        // Calculate total months
+        let totalMonths = (today.getFullYear() - startDate.getFullYear()) * 12 + (today.getMonth() - startDate.getMonth());
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+
+        // Create dynamic text (grammar handled)
+        let experienceText = "";
+        if (years > 0) {
+          experienceText += `${years} Year${years > 1 ? "s" : ""}`;
+        }
+        if (months > 0) {
+          experienceText += `${years > 0 ? " and " : ""}${months} Month${months > 1 ? "s" : ""}`;
+        }
+        if (experienceText === "") {
+          experienceText = "Less than a month";
+        }
+
+        // Update the HTML element with the calculated text
+        const expElement = document.getElementById("totalExperience");
+        if (expElement) {
+          expElement.textContent = `${experienceText} of Professional Experience as a Full-Stack Developer`;
+        }
+      });
+    </script>
+
   </head>
   <body id="top">
     <header>
@@ -511,66 +542,111 @@
           </div>
         </div>
       </div>
+
       <div class="section" id="experience">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Work Experience</div>
-    <div class="card">
-      <div class="row" style="min-height: 200px;">
-        <div class="col-md-3 bg-primary d-flex justify-content-center align-items-center" 
-            data-aos="fade-right" data-aos-offset="50" data-aos-duration="500" style="min-height: inherit;">
-          <div class=" card-body cc-experience-header text-white text-center">
-            <p class="mb-2">SEPT 2022 - FEB 2025</p>
-            <h5 class="mb-0">DIGISAILOR</h5>
+        <div class="container cc-experience">
+          <div class="h4 text-center mb-4 title">Work Experience</div>
+
+          <!-- Overall Experience Summary -->
+          <div class="card mb-4 shadow-sm border-0">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-12 text-center py-4 bg-primary text-white" data-aos="fade-down" data-aos-offset="50" data-aos-duration="500">
+                <h4 class="mb-2">Overall Experience</h4>
+                  <p class="mb-0 fs-5">
+                    <span id="totalExperience" class="highlight-glow">Loading experience...</span>
+                  </p>
+                <small style="font-size: small;">(From September 2022 to Present)</small>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <h5 class="mb-3">Full-Stack Developer (MERN)</h5>
-            <ul style="line-height: 2.2;">
-              <li>Involved in the full software development lifecycle, including requirement analysis, system design, development, testing, and deployment.</li>
-              <li>Collaborated closely with product managers and architects to define software specifications and deliver scalable solutions.</li>
-              <li>Demonstrated the ability to quickly learn and implement new programming languages, frameworks, and tools, ensuring seamless integration of cutting-edge technologies.</li>
-              <li>With 2+ years of experience, consistently met deadlines, delivered tasks on time, and ensured smooth project execution without delays or task spillovers.</li>
-            </ul>
+
+          <!-- Freelancer Experience -->
+          <div class="card">
+            <div class="row" style="min-height: 200px;">
+              <div class="col-md-3 bg-primary d-flex justify-content-center align-items-center" 
+                  data-aos="fade-right" data-aos-offset="50" data-aos-duration="500" style="min-height: inherit;">
+                <div class="card-body cc-experience-header text-white text-center">
+                  <p class="mb-2">SEP 2024 - PRESENT</p>
+                  <h5 class="mb-0">Freelancer</h5>
+                </div>
+              </div>
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                <div class="card-body">
+                  <h5 class="mb-3">Full-Stack Developer</h5>
+                  <ul style="line-height: 2.2;">
+                    <li>Collaborating with clients across Tamil Nadu to deliver modern and user-friendly websites and applications using React.js, Node.js, and MySQL.</li>
+                    <li>Specialized in developing portfolio sites, business dashboards, and automation tools with clean UI/UX and optimized backend performance.</li>
+                    <li>Managed complete project lifecycle — from concept to deployment and client support.</li>
+                    <li>Maintained long-term client relationships by ensuring timely delivery and consistent quality.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- DIGISAILOR Experience -->
+          <div class="card">
+            <div class="row" style="min-height: 200px;">
+              <div class="col-md-3 bg-primary d-flex justify-content-center align-items-center" 
+                  data-aos="fade-right" data-aos-offset="50" data-aos-duration="500" style="min-height: inherit;">
+                <div class="card-body cc-experience-header text-white text-center">
+                  <p class="mb-2">SEPT 2022 - FEB 2025</p>
+                  <h5 class="mb-0">DIGISAILOR</h5>
+                </div>
+              </div>
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                <div class="card-body">
+                  <h5 class="mb-3">Full-Stack Developer (MERN)</h5>
+                  <ul style="line-height: 2.2;">
+                    <li>Contributed to end-to-end development of scalable web applications and APIs using React.js, Node.js, Express, and MySQL.</li>
+                    <li>Collaborated with cross-functional teams to deliver robust and secure solutions aligned with business goals.</li>
+                    <li>Worked on multiple client projects involving admin dashboards, analytics tools, and dynamic content platforms.</li>
+                    <li>Consistently met deadlines, ensured high-quality code, and maintained smooth project delivery.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Scrbblr Experience -->
+          <div class="card">
+            <div class="row">
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                <div class="card-body cc-experience-header">
+                  <p>APRIL 2020 - MAY 2020</p>
+                  <div class="h5">The Scrbblr</div>
+                </div>
+              </div>
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                <div class="card-body">
+                  <div class="h5">Social Media Marketer</div>
+                  <p>Intern as a Social Media Marketer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Techso Solutions Experience -->
+          <div class="card">
+            <div class="row">
+              <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                <div class="card-body cc-experience-header">
+                  <p>JUNE 2019 - JUNE 2019</p>
+                  <div class="h5">Techso Solutions</div>
+                </div>
+              </div>
+              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                <div class="card-body">
+                  <div class="h5">Data and Network Security</div>
+                  <p>Intern as a Data and Network Security for a week.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>April 2020- May 2020</p>
-            <div class="h5">The Scrbblr</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Social Media Marketer</div>
-            <p> Intern as a Social Media Marketer.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>June 2019 - June 2019</p>
-            <div class="h5">Techso Solutions</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Data And Network Security</div>
-            <p> Intern as a Data and Network Security for a Week.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-        </div>
-      </div>
+      
     </div>
   </div>
 </div>
