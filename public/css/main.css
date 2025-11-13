@@ -5297,3 +5297,20 @@ a.credit {
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
   }
+
+  .skill-heading {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  color: #0d6efd;
+}
+
+.heading-underline {
+  width: 75%;
+  height: 3px;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  border: none;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
