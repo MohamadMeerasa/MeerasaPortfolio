@@ -7627,14 +7627,14 @@ a.credit {
 
 .cc-porfolio-image {
   height: 100%;
-  /* border-radius: 10px; */
+  border-radius: 10px;
 }
 
 .cc-porfolio-image figure {
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* border-radius: 10px; */
+  border-radius: 10px;
 }
 
 .cc-porfolio-image img {
@@ -7642,7 +7642,7 @@ a.credit {
   height: 250px;           /* force same height */
   object-fit: cover;      /* crop image nicely */
   display: block;
-  /* border-radius: 10px; */
+  border-radius: 10px;
 }
 
 .cc-effect {
